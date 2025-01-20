@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visualizer</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #2f2f2f;
+        }
+        .pixel {
+            width: 2px;
+            height: 2px;
+        }
+        .canvas {
+            border: 10px solid white;
+            border-style: double;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <p align="center" style="font-size: 20px;" id="error"></p>
+        <div style="display: flex; align-items: center;">
+            <div style="margin-right: 20px; width: 250px;">
+                <p align="center" style="color: #ff80ff; font-size: 20px;" id="coordinate"></p>
+                <p align="center" style="color: #80ffff; font-size: 20px">關於顯示模式</p>
+                <p><ul style="color: white; font-size: 18px"><li>顯示圖案：就顯示圖案</li><li>顯示差距：每個像素會根據與 IOIC 2025 logo 的差距決定深淺，差的越多該像素越深</li></ul></p>
+                <p align="center" style="color: #ffff80; font-size: 20px">一些可能會有用的範例</p>
+                <p><ul style="color: white; font-size: 18px"><li>「原圖」是一張範例圖</li><li>「結果」是用一份可以在這題拿到至少 150 分的 code 跑範例圖的結果</li></ul></p>
+                <div>
+                    <button style="width: 50px; height: 30px; margin-left: 25px; display: inline-block;" id="ioic"> IOIC </button>
+                    <button style="width: 50px; height: 30px; display: inline-block" id="mygo"> !!!!! </button>
+                    <button style="width: 50px; height: 30px; display: inline-block" id="kyouko1"> 原圖 </button>
+                    <button style="width: 50px; height: 30px; display: inline-block" id="kyouko2"> 結果 </button>
+                </div>
+            </div>
+            <div style="margin-right: 20px;">
+                <div class="canvas" id="canvas"></div>
+            </div>
+            <div style="width: 250px;">
+                <div align="center">
+                <font style="color: #ffffff; font-size: 16px">顯示模式：</font>
+                <select align="center" id="display_mode" style="font-size: 16px">
+                    <option value="color">顯示圖案</option>
+                    <option value="diff">顯示差距</option>
+                </select>
+                </div>
+                <p align="center" style="color: #80ff80; font-size: 20px">輸入欄位</p>
+                <textarea style="width: 250px; height: 300px; display: flex; margin-bottom: 10px" id="input">7
+0 0 225 150 135 148 139
+0 150 300 150 199 189 181
+225 0 75 263 -255 -255 -255
+225 0 75 263 61 50 61
+75 60 150 125 -255 -255 -255
+75 60 150 125 183 117 101
+40 60 35 125 -255 -255 -255
+</textarea>
+                <button style="width: 50px; height: 30px; margin-left: 100px" id="run"> run! </button>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
